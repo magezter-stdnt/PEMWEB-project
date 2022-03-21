@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
 *{
+    scroll-behavior: smooth;
     font-family: 'Poppins';
 }
 
@@ -15,6 +16,7 @@ body{
 header{
     color: white;
     font-size: 20px;
+    margin-top: 0px;
     /* margin-bottom: 5px; */
 }
 
@@ -47,8 +49,8 @@ header{
     grid-area: r2;
 } */
 
-
-div img,
+/* was div img */
+.home-container img,
 .home-container > div >div{
     width: 770px;
     height: 500px;
@@ -158,4 +160,21 @@ nav{
 
 li{
     display: inline;
+}
+
+.arrow-up{
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+    margin: 0px;
+    text-decoration: none;
+    
+    
+
+
+    /* padding ganti sesuai teks navigasi*/
+    padding-top: 10px ;
+    padding-bottom: 10px;
+    padding-left: 15px;    
 }
