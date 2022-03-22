@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Alatsi');
+
 *{
     scroll-behavior: smooth;
     font-family: 'Poppins';
 }
 
-/* html{
+html{
     scroll-behavior: smooth;
-} */
+}
 
 body{
     margin: 0;
@@ -122,7 +124,7 @@ header{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    position: fixed;
+    position: absolute;
     background-color: white;
     /* opacity: 70%; */
     margin: 0px;
@@ -136,7 +138,7 @@ header{
 }
 
 .flex-nav a{
-    color: black;
+    color: white;
     transition: 5s;
     text-decoration: none;
 }
@@ -196,7 +198,97 @@ nav{
 
 
 
+/* vvv index.html vvv */
+.darker{
+    filter: brightness(50%);
+}
 
+#bgslider { 
+    overflow: hidden; 
+}
+
+#bgslider figure { 
+  position: absolute;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 30s slidy infinite; 
+}
+
+#bgslider figure img { 
+	width: 20%; 
+	float: left; 
+	height:100vh;
+    margin-top: -10px;
+}
+
+@keyframes slidy {
+    0% { left: 0%; }
+    20% { left: 0%; }
+    25% { left: -100%; }
+    45% { left: -100%; }
+    50% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -300%; }
+    95% { left: -300%; }
+    100% { left: -400%; }
+}
+
+.button{
+    position: absolute;
+    width: 160px;
+    height: 60px;
+    background-color: rgba(255, 138, 0, 1);
+    box-sizing: border-box;
+    border-radius: 15px;
+    top: 310px;
+    right: 256px;
+}
+
+.button :hover{
+    width: 160px;
+    height: 60px;
+    background-color: rgba(255, 164, 57, 1);
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+#text-button{
+    font-family: 'Alatsi', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    padding-top: 18px;
+}
+
+#text-button a{
+    color: white;
+    text-decoration: none;
+}
+
+#description{
+    position: absolute;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 48px;
+    line-height: 72px;
+    color: white;
+    width: 576px;
+    height: 245px;
+    padding-top: 224px;
+    padding-left: 64px;
+}
+
+#sub-description{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 21px;
+}
 
 
 
