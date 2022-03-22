@@ -4,13 +4,27 @@
     font-family: 'Poppins';
 }
 
-/* html{
+html{
     scroll-behavior: smooth;
-} */
+    overflow: hidden;
+}
 
 body{
+    /* OLD */
+    /* margin: 0; */
+    /* padding-bottom: 1000px; */
+
+    /* NEW - parallex */    
     margin: 0;
-    padding-bottom: 1000px;
+    padding: 0;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+
 }
 
 header{
@@ -18,9 +32,163 @@ header{
     font-size: 17px;
     margin-top: 0px;
     /* margin-bottom: 5px; */
+
+    position: sticky;
+    z-index: 5;
+    top:0;
 }
 
+.flex-nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* position: sticky; */
+    background-color: white;
+    /* opacity: 70%; */
+    margin: 0px;
+    width: 100%;
+
+    /* padding ganti sesuai teks navigasi*/
+    padding-top: 10px ;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    
+}
+
+.flex-nav a{
+    color: black;
+    transition: 5s;
+    text-decoration: none;
+}
+
+
+.flex-nav li{
+    /* margin: 0 100px; */
+    display: inline;
+    opacity: 100%;
+    /* background-color: yellow; */
+    position: relative;
+    color: black;
+}
+  
+.flex-nav li:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    /* background-color: orange; */
+    transition: 0.25s;
+}
+  
+.flex-nav li:hover:after{
+    transition: 0.25s;
+    transform: scaleX(1);
+    background-color: brown;
+}
+
+.arrow-up{
+    display: flex;
+    transform:rotate(180deg);
+    position: fixed;
+    bottom: 0px;
+    right: 0;
+    margin: 0px;
+    text-decoration: none;
+    z-index: -1;
+    justify-content: flex-end;
+    
+    /* ganti warna putih ke item */
+    -webkit-filter: invert(1);
+    
+    /* padding ganti sesuai teks navigasi*/
+    padding-top: 10px ;
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+
+nav{
+    /* display: flex; */
+    /* justify-content: space-around; */
+    
+}
+
+/* div.home-container{
+    width: 100%;
+    height: 360px;
+} */
+
+.whitespace{
+    background-color: black;
+    padding: 5px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+
+.parallex {
+    box-sizing: border-box;
+    min-height: 100vh;
+    position: relative;
+    transform-style: inherit;
+    width: 100vw;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.parallex h1 {
+    margin: 0;
+    position: absolute;
+    font-size: 140px;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* .parallex,
+.parallex:before {
+    background: 50% 50% / cover;
+} */
+
+.par-home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    background: url(../images/maskwpp-2gede.png);
+    background-size: cover;
+    transform-origin: center center 0;
+    transform: translateZ(-1px) scale(2);
+    z-index: -1;
+    min-height: 100vh;
+}
+.par-shop::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    background: url(../images/maskgajahtv.png);
+    background-size: cover;
+    transform-origin: center center 0;
+    transform: translateZ(-1px) scale(2);
+    z-index: -1;
+    min-height: 100vh;
+}
+
+/* vvv home.html vvv */
+
 .home-container{
+    z-index: 2;
+    position: absolute;
+    
     width: 100%;
     height: 500px;
     margin: auto;
@@ -35,6 +203,13 @@ header{
                             "l3 r3"; */
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 0.5fr 0.5fr;
+
+}
+
+.home-container::after{
+    content: "";
+    padding: 34px;
+
 }
 /* .l1{
     grid-area: l1;
@@ -52,8 +227,9 @@ header{
 /* was div img */
 .home-container img,
 .home-container > div >div{
-    width: 770px;
+    width: 100%;
     height: 500px;
+    overflow: hidden;
     
 }
 
@@ -112,87 +288,81 @@ header{
     transition: 0.5s;
 }
 
+.button-3{
+    color: black;
+    text-decoration: none;
+    font-weight: lighter;
+
+
+    background-color: #E5FCB9;
+    padding: 20px 30px 20px 30px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 50px;
+    transition: 0.5s;
+
+}
+.button-3:hover{
+    color: #E5FCB9;
+    background-color: black;
+    border-color: #E5FCB9;
+    transition: 0.5s;
+}
+
+
+.button-4{
+    color: white;
+    text-decoration: none;
+    font-weight: lighter;
+
+
+    background-color: #64D6C1;
+    padding: 20px 30px 20px 30px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    border-radius: 50px;
+    transition: 0.5s;
+
+}
+.button-4:hover{
+    color: #64D6C1;
+    background-color: white;
+    border-color: #64D6C1;
+    transition: 0.5s;
+}
+
+
+.button-5{
+    color: black;
+    text-decoration: none;
+    font-weight: lighter;
+
+
+    background-color: #4272b5;
+    padding: 20px 30px 20px 30px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 50px;
+    transition: 0.5s;
+
+}
+.button-5:hover{
+    color: #4272b5;
+    background-color: black;
+    border-color: #4272b5;
+    transition: 0.5s;
+}
+
+
 /* .container{
     display: flex;
     justify-content: space-between;
     background-color: black;
 } */
 
-.flex-nav{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    position: fixed;
-    background-color: white;
-    /* opacity: 70%; */
-    margin: 0px;
-    width: 100%;
-
-    /* padding ganti sesuai teks navigasi*/
-    padding-top: 10px ;
-    padding-bottom: 10px;
-    padding-left: 15px;
-    
-}
-
-.flex-nav a{
-    color: black;
-    transition: 5s;
-    text-decoration: none;
-}
-
-
-.flex-nav li{
-    /* margin: 0 100px; */
-    display: inline;
-    opacity: 100%;
-    /* background-color: yellow; */
-    position: relative;
-    color: black;
-}
-  
-.flex-nav li:after{
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    /* background-color: orange; */
-    transition: 0.25s;
-}
-  
-.flex-nav li:hover:after{
-    transition: 0.25s;
-    transform: scaleX(1);
-    background-color: brown;
-}
-
-nav{
-    /* display: flex; */
-    /* justify-content: space-around; */
-    
-}
-
-/* div.home-container{
-    width: 100%;
-    height: 360px;
-} */
-
-.arrow-up{
-    display: flex;
-    position: fixed;
-    bottom: 0px;
-    right: 20px;
-    margin: 0px;
-    text-decoration: none;
-
-    /* padding ganti sesuai teks navigasi*/
-    padding-top: 10px ;
-    padding-bottom: 10px;
-    padding-left: 15px;    
-}
 
 
 
@@ -207,31 +377,175 @@ nav{
 
 
 /* vvv shop.html vvv */
-main{
-    /* background-color: black; */
-}
-.whitespace{
-    background-color: black;
-    padding: 30px;
-}
-
-.tulisan{
-    text-align: center;
-    font-size: 50px;
-    /* margin-bottom: -300px; */
-}
-
-.gambar{
-    background-image: url(/assets/images/maskwpp-2gede.png);
-    /* background-attachment: fixed; */
-    /* https://www.w3schools.com/howto/howto_css_parallax.asp */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
+.shop-container{
+    z-index: 2;
+    position: absolute;
+    
+    background-color: white;
     width: 100%;
-    height: 160vh;
+    /* height: 500px; */
+    margin: auto;
+    
+    /* border: 3px solid red; */
+    padding: 0px;
+    /* box-sizing: border-box; */
+    
+    
+    display: flex;
+    flex-direction: column;
+
 }
 
-.shop-content{
+.shop-container::after{
+    content: "";
+    padding: 20px;
+}
+
+.shop-container > .shop-content{
+    background-color: white;
+    margin: 10px 5px 50px 5px;
+    padding: 0px;
+    font-size: 30px;
+
+    border-radius: 10px;
+    border: 4px solid black
+}
+
+.shop-container > .shop-content > .shop-grid{
+    
+    width: 100%;
+    height: 750px;
+    /* margin: auto; */
+    
+    
+    display: grid;
+    grid-template-areas: 
+        "title title"
+        "items items";
+    grid-template-rows: 0.3fr 2fr;
+    grid-template-columns: 0.5fr 2fr;
+    
+
+    box-sizing: border-box;
+}
+
+.shop-grid > .shop-grid-title{
+    grid-area: title;
+
+    background-color: rgb(54, 20, 86);
+    background-color: black;
+    border-radius: 5px;
+    
+    /* border-bottom: 100px solid rgb(72, 20, 120); */
+    
+    font-size: 20px;
+    text-align: start;
+    
+}
+.shop-grid > .shop-grid-title > h1{
+    color: white;
+    font-weight: 500;
+    margin-left: 5vh;
+
+}
+
+/* .shop-grid > .shop-grid-filter{
+    grid-area: filter;
+} */
+
+.shop-grid > .shop-grid-items{
+    grid-area: items;
+    background-color: white;
+    box-sizing: border-box;
+
+    display: flex;
+    
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    width: 100%;
+    height: 100%;
+
+    overflow-y: scroll;
+}
+
+.shop-grid > .shop-grid-items::-webkit-scrollbar{
+    display: none;
+
+}
+
+
+.shop-grid-items > .items-box{
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    margin:14px;
+    width: 400px;
+    /* height: 600px; */
+
+    border-radius: 10px;
+    border:3px solid black;
+    overflow-y: scroll;
+}
+
+.shop-grid-items > .items-box::-webkit-scrollbar{
+    display: none;
+}
+
+.shop-grid-items > .items-box > .item-title{
+
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+
+    height: 80px;
+    margin-top:-20px
+
+}
+
+/* aligning image .item-image pake flexbox */
+
+.shop-grid-items > .items-box > .item-image{
+    display: flex;
+    flex-direction: column;
+}
+
+.shop-grid-items > .items-box > .item-image img{
+    width: 300px;
+    align-self: center;
+}
+
+/* .shop-grid-items > .items-box > .item-image img{
+    width: 300px;
+    margin-left: 50px;
+} */
+
+.shop-grid-items > .items-box > .item-description{
+    margin-left : 10px;
+    margin-right : 10px;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 2.5vh;
+
+    /* tambah flexbox biar harga di bawah dan gutluking */
+    display: flex;
+    flex-direction: column;
+
+    /* background-color: black;
+    border-radius: 5px;
+    color: white; */
+    
+}
+.shop-grid-items > .items-box > .item-description p{
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.shop-grid-items > .items-box > .item-description > .item-description-price{
+    font-size: 20px;
+    align-self: flex-end;
 }
